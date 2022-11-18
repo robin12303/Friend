@@ -24,4 +24,5 @@ urlpatterns = [
     path('community/', include('Community.urls')),
     path('notice/', include('Notice.urls')),
     path('parking/', include('ParkingLot.urls')),
+    path('mypage/', include('MyPage.urls')),
 ]
