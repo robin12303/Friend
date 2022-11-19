@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+templet = 'Login/bootstrap.html'
 
 def index(request):
-    return HttpResponse("Hello, World. You're at the Login index.")
+    return render(request, templet)

@@ -23,6 +23,6 @@ urlpatterns = [
     path('bill/', include('BillPayment.urls')),
     path('community/', include('Community.urls')),
     path('notice/', include('Notice.urls')),
-    path('parking/', include('ParkingLot.urls')),
     path('mypage/', include('MyPage.urls')),
+    path('parking/', include('ParkingLot.urls')),
 ]

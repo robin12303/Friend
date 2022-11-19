@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-
-template = 'Main/index.html'
+template = 'Main/bootstrap.html'
 '''
 Variable "context" is data container for "Main/index.html" page.
 That data is just for test.
@@ -27,8 +26,7 @@ This function do logout and refresh the page.
 '''
 def logout(request):
     context
-    if request.method == 'POST':
-        context["islogin"] = False
+    context["islogin"] = False
     return render(request, template, context)
 
 
