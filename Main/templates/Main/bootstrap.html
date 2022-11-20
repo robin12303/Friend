@@ -48,14 +48,14 @@
                         </li>
                     </ul>
                     {% if islogin %}
-                        <form class="d-flex" action = {% url 'logout' %}>
+                        <form class="d-flex" action = {% url 'main_logout' %}>
                             <a href = "/mypage">{{user_name}}님</a>
                             <button class="btn btn-outline-dark" type="submit">
                                 로그아웃
                             </button>
                         </form>
                     {% else %}
-                        <form class="d-flex" action = {% url 'Login_index' %}>
+                        <form class="d-flex" action = {% url 'login_index' %}>
                             <button class="btn btn-outline-dark" type="submit">
                                 로그인
                             </button>
