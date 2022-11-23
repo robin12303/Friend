@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Hello, World. You're at the Bill_Payment index.")
+    return render(request, 'BillPayment/관리비고지서.html')
