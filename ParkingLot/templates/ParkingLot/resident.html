@@ -11,8 +11,7 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+
     </head>
     <body>
         <!-- Navigation-->
@@ -61,7 +60,7 @@
                         </li>
                     </ul>
                     {% if islogin %}
-                        <form class="d-flex" action = {% url 'main_logout' %}>
+                        <form class="d-flex" action = {% url 'parkinglot_logout' %}>
                             <a href = "/mypage">{{user_name}}님</a>
                             <button class="btn btn-outline-dark" type="submit">
                                 로그아웃
@@ -86,6 +85,29 @@
                 </div>
             </div>
         </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <a class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">차량 선택</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for num in car_number %}
+                                <a class="dropdown-item" href="#!">{{num}}</a>
+                            {% endfor %}
+                        </ul>
+                    </a>
+                    <a class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">주차공간 선택</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for empty in empty %}
+                                <a class="dropdown-item" href="#!">{{empty}}</a>
+                            {% endfor %}
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; DATABASE-Friend 2022</p></div>

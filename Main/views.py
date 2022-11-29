@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-template = 'Main/bootstrap.html'
+template = 'Main/index.html'
 '''
 Variable "context" is data container for "Main/index.html" page.
 That data is just for test.
@@ -15,9 +15,6 @@ context = {
     'id' : "adsf",
     'pw' : "asdf",
     'user_name': "adsf",
-    'notice1' : {"num" : 1, "title" : "1번", "date" : "2022.11.10"},
-    'notice2' : {"num" : 2, "title" : "2번", "date" : "2022.11.09"},
-    'notice3' : {"num" : 3, "title" : "3번", "date" : "2022.11.08"},
 }
 
 '''

@@ -11,8 +11,6 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
@@ -32,8 +30,21 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">주차장</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">차량 등록</a></li>
-                                <li><a class="dropdown-item" href="#!">방문 차량 예약</a></li>
+                                <li><a class="dropdown-item" href= 
+                                    {% if islogin %}
+                                        {%url 'parkinglot_input'%}
+                                    {% else %}
+                                        {%url 'login_index'%}
+                                    {% endif %}
+                                    >차량 등록</a></li>
+                                <li><a class="dropdown-item" href= 
+                                    {% if islogin %}
+                                        {%url 'parkinglot_resident'%}
+                                    {% else %}
+                                        {%url 'login_index'%}
+                                    {% endif %}
+                                    >방문 차량 예약(입주민용)</a></li>
+                                <li><a class="dropdown-item" href= {%url 'parkinglot_guest'%}>방문 차량 예약(방문자용)</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
