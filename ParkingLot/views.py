@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 '''
 Variable "context" is data container for index page.
 That data is just for test.
