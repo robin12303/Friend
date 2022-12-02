@@ -1,6 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
+context = {
+    'islogin' : True,
+}
+
+def notice(request):
+    template = 'Notice/notice.html'
+    return render(request, template, context)
+
+def inquiry(request):
+    template = 'Notice/inquiry.html'
+    return render(request, template, context)
 
 def index(request):
-    return HttpResponse("Hello, World. You're at the Notice index.")
+    template = 'Notice/index.html'
+    return render(request, template, context)
