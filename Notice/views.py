@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from django.template import loader
 
 def index(request):
-    return HttpResponse("Hello, World. You're at the Notice index.")
+    template = loader.get_template('Notice/index.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
