@@ -4,4 +4,4 @@ context = {}
 
 def index(request):
     template = 'MyPage/index.html'
-    return render(context, request, context)
+    return render(request, template, context)
