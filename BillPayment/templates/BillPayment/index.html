@@ -17,7 +17,7 @@
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href= 
-                            {% if islogin %}
+                            {% if user.is_authenticated %}
                                 {% url 'billpayment_bill' %}
                             {% else %}
                                 {% url 'login_index' %}
@@ -40,7 +40,7 @@
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=
-                            {% if islogin %}
+                            {% if user.is_authenticated %}
                                 {% url 'billpayment_detail' %}
                             {% else %}
                                 {% url 'login_index' %}
@@ -63,7 +63,7 @@
                     <!-- Product actions-->
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href=
-                            {% if islogin %}
+                            {% if user.is_authenticated %}
                                 {% url 'billpayment_pay' %}
                             {% else %}
                                 {% url 'login_index' %}
