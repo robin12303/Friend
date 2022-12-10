@@ -1,36 +1,82 @@
 {% extends 'base.html' %}
+{% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="../../../vendors/simplebar/simplebar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="../../../assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+    <link href="../../../assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+{% endblock head %}
+
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-        <h2>관리비고지서</h2></div>
-        <div class="col-md-8 col-md-push-1">
-            <h3> ___동___호 ___고객님</h3>
-            <h3>___년___월(___월___일~___월___일)</h3>
+<body>
+  <div class="container-fluid py-5">
+    <div class="col-12 col-xl-4 col-xxl-3">
+      <div class="col-12">
+        <div class="card text-white bg-primary ">
+          <div class="card-body" style="width: 1000;">
+            <div>
+              <div class="d-flex justify-content-between">
+                <p class="card-title mb-4 text-white">2022년 9월분</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <h2 class="text-900 fw-semi-bold text-white">223,260원</h2>
+              </div>
+              <div class="d-flex justify-content-between pt-3">
+                <p class="text-900 text-white">납부마감일 10월 31일</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-md-4 col-md-push-4">
-            <h3>납부 예정 금액</h3>
-            <h3>납부 마감일 ___월___일</h3>
+
+    <div class="container-fluid p-5">
+      <div class="col-12 col-xl-4 col-xxl-3">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body " style="margin-left: 24px; margin-right: 24px;">
+              <p class="text-1100 fw-semi-bold">이번 달 관리비</p>
+              <div>
+                <div class="d-flex justify-content-between">
+                  <h2 class="text-900 fw-semi-bold">218,560원</h2>
+                  <p class="text-danger fw-semi-bold">전월대비 6,010원 증가했어요.</p>
+                  <!-- 전월대비 감소금액은 파랑색으로 표시-->
+                </div>
+              <hr />
+              <div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-900 fw-semi-bold"><a href = {% url 'billpayment_detail' %}>당월부과액 :</a></p>
+                  <p class="text-1100 fw-semi-bold">218,560원</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-900 fw-semi-bold">할인금액 :</p>
+                  <p class="text-1100 fw-semi-bold">0원</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-900 fw-semi-bold">미납액 :</p>
+                  <p class="text-danger fw-semi-bold">4500원</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-900 fw-semi-bold">미납연체료:</p>
+                  <p class="text-1100 fw-semi-bold">200원</p>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between border-top border-dashed pt-4">
+                <h4 class="mb-0">Total :</h4>
+                <h4 class="mb-0">223,260원</h4>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-md-4 col-md-push-4">
-            <h3>납부 상태</h3>
-            <h3>당월 부과일</h3>
-            <h3>미납액</h3>
-            <h3>미납연채료</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4 col-md-push-3">
-            <form action = {% url 'billpayment_detail' %}>
-                <button class="btn btn-primary btn-lg" type = "submit">
-                    세부항목 조회하기
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
-{% endblock %}
+</body>
+
+</html>
+
+{% endblock content %}

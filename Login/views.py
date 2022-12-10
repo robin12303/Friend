@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-templet = 'Login/bootstrap.html'
+template = 'Login/bootstrap.html'
+context = {}
+
+def logined(request):
+    return render(request , template, context)
 
 def index(request):
-    return render(request, templet)
+    return render(request, template, context)
