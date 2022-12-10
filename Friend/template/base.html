@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>L리빙</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -40,11 +40,9 @@
                             data-bs-toggle="dropdown" aria-expanded="false">주차장</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if islogin %}
-                                <li><a class="dropdown-item" href={% url 'parkinglot_input' %}>차량 등록</a></li>
-                                <li><a class="dropdown-item" href={% url 'parkinglot_resident' %}>주차장 예약(입주민용)</a></li>
+                                <li><a class="dropdown-item" href={% url 'parkinglot_input' %}>차량 등록 및 조회</a></li>
                             {% else %}
-                                <li><a class="dropdown-item" href={% url 'login_index' %}>차량 등록</a></li>
-                                <li><a class="dropdown-item" href={% url 'login_index' %}>주차장 예약(입주민용)</a></li>
+                                <li><a class="dropdown-item" href={% url 'login_index' %}>차량 등록 및 조회</a></li>
                             {% endif %}
                             <li><a class="dropdown-item" href={% url 'parkinglot_guest' %}>주차장 예약(방문자용)</a></li>
                         </ul>
