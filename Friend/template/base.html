@@ -60,7 +60,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if islogin %}
                                 <li><a class="dropdown-item" href={% url 'billpayment_bill' %}>고지서 확인</a></li>
-                                <li><a class="dropdown-item" href={% url 'billpayment_receipt' %}>관리비 영수증</a></li>
+                                <li><a class="dropdown-item" href={% url 'billpayment_detail' %}>관리비 영수증</a></li>
                                 <li><a class="dropdown-item" href={% url 'billpayment_pay' %}>결제</a></li>
                             {% else %}
                                 <li><a class="dropdown-item" href={% url 'login_index' %}>고지서 확인</a></li>
