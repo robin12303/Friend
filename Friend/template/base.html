@@ -15,6 +15,14 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <script href="js/scripts.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -28,15 +36,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        <a class="nav-link dropdown-toggle" style="font-size: 32px;" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">공지사항</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href={% url 'notice_notice' %}>공지사항</a></li>
-                            <li><a class="dropdown-item" href={% url 'notice_inquiry' %}>문의글</a></li>
+                            <li><a class="dropdown-item" href={% url 'notice_index' %}>게시판</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        <a class="nav-link dropdown-toggle" style="font-size: 32px;" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">주차장</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if islogin %}
@@ -48,7 +55,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        <a class="nav-link dropdown-toggle" style="font-size: 32px;" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">관리비</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% if islogin %}
@@ -97,11 +104,11 @@
     {% endblock content %}
 
     <!-- Footer-->
-    <footer class=" bg-dark" style="height: 20%;">
+    <footer class=" bg-dark" style=" height: 20% ; bottom: 0; background-color: black;">
         <div class="container">
-            <p class="text-left text-white" style="margin-left: 33%;">개인정보처리방침</p>
+            <p class="text-left text-white mt-5" style="margin-left: 33%;">개인정보처리방침</p>
             <p class="text-left text-white" style="margin-left: 33%;">이천시 마도로12  TEL. 031-633-0000  FAX. 031-1234-4567</p>
-            <p class="text-left text-white" style="margin-left: 33%;">현대산업개발 &copy; DATABASE-Friend 2022</p>
+            <p class="text-left text-white" style="margin-left: 33%;" margin-bottom: 0;">현대산업개발 &copy; DATABASE-Friend 2022</p>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
