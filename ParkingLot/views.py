@@ -16,10 +16,6 @@ context = {
     'empty' : ['A1','A23','B3','C5','C13','C14']
 }
 
-def resident(request):
-    template = "ParkingLot/resident.html"
-    return render(request, template, context)
-
 def guest(request):
     template = "ParkingLot/guest.html"
     return render(request, template, context)

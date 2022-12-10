@@ -1,7 +1,9 @@
 from django.shortcuts import render
 
-context = {}
+context = {
+    "islogin" : True,
+}
 
 def index(request):
     template = 'MyPage/index.html'
-    return render(context, request, context)
+    return render(request, template, context)
