@@ -1,24 +1,182 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <div class="row">
-         <div class="col-md-6  ">
-            <div class="table-responsive">
-                <table class="table table table-hover table table-striped table-bordered">
-                    <tr >
-                        <th>상세내역</th>
-                        <th>요금(원)</th>
-                    {% for data in data %}
-                        <tr >
-                            <th>{{data.0}}</th>
-                            <th>{{data.1}}</th>
-                    {% endfor %}
-                    <tr >
-                        <th>총액</th>
-                        <th>{{datatotal}}</th>
-                </table>
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phoenix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"
+    rel="stylesheet">
+  <link href="../../../vendors/simplebar/simplebar.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link href="../../../assets/css/theme.min.css" type="text/css" rel="stylesheet" id="style-default">
+  <link href="../../../assets/css/user.min.css" type="text/css" rel="stylesheet" id="user-style-default">
+  <style>
+  </style>
+</head>
+
+
+<body>
+  <div class="container-fluid pt-5">
+    <div class="col-12 col-xl-4 col-xxl-3">
+      <div class="col-12">
+        <div class="card text-white bg-primary ">
+          <div class="card-body" style="width: 1000;">
+            <div style="padding-left: 40%;">
+              <select class="bg-primary text-white" style=" font-size: 20px; border:none; text-align: center;">
+                <option value="">월분</option>
+                <option value="">1월분</option>
+                <option value="">2월분</option>
+                <option value="">3월분</option>
+                <option value="">4월분</option>
+                <option value="">5월분</option>
+                <option value="">6월분</option>
+                <option value="">7월분</option>
+                <option value="">8월분</option>
+                <option value="">9월분</option>
+                <option value="">10월분</option>
+                <option value="">11월분</option>
+                <option value="">12월분</option>
+              </select>
             </div>
+            <div class="d-flex justify-content-between pt-3">
+              <p class="text-900 text-white">아름수리아파트 106동 2202호</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h2 class="text-900 fw-semi-bold text-white">223,260원</h2>
+            </div>
+
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+
+  <div class="container-fluid ">
+    <div class="col-12 col-xl-4 col-xxl-3">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body " style="margin-left: 24px; margin-right: 24px;">
+            <div style="margin-bottom: 10px;">
+              <p style=" font-size: 20px; border:none; float: left;">상세내역</p>
+              <select class="bg-white " style=" font-size: 20px; border:none; float: right;">
+                <option value="">전월대비 높은순</option>
+                <option value="">전월대비 낮은순</option>
+                <option value="">당월금액 높은순</option>
+                <option value="">당월금액 낮은순</option>
+              </select>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between">
+                <h2 class="text-900 fw-semi-bold text-white">218,560원</h2>
+                <p class="text-danger fw-semi-bold text-white">전월대비 6,010원 증가했어요.</p>
+                <!-- 전월대비 감소금액은 파랑색으로 표시-->
+              </div>
+              <div class="member">
+                <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">일반관리비</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="text-align: right;" >+4500원</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">청소비</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">소독비</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">승강기유지비</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">경비비</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">화재보험료</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-primary fw-semi-bold" style="float:right">-4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">위탁관리수수료</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">세대전기료</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">공동전기료</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">TV수신료</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">난방사용료</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">세대수도세</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                   <div class="d-flex justify-content-between">
+                  <h4 class="text-900 fw-semi-bold">공동수도세</h4>
+                  <h4 class="text-1100 fw-semi-bold">49,420</h4>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <p class="text-danger fw-semi-bold" style="float:right">+4500원</p>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
 {% endblock content %}
