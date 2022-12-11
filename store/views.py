@@ -27,7 +27,7 @@ def resident_index(request):
     resident_index Lists
     """
     res_list = Operator.objects.order_by('id')
-    context = {'oper_list': oper_list}
+    context = {'oper_list': res_list}
     return render(request, 'store/oper_list.html', context)
 
 
@@ -36,5 +36,5 @@ def resident_detail(request, oper_list):
     resident_detail detail
     """
     res = Resident.objects.get(id=oper_list)
-    context = {'op': op}
+    context = {'op': res}
     return render(request, 'store/oper_detail.html', context)

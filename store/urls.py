@@ -8,4 +8,5 @@ app_name = 'store'
 urlpatterns =[
     path('', views.index, name='index'),
     path('<str:oper_list>/', views.detail),
+    path('detail', views.resident_detail, name='detail'),
 ]

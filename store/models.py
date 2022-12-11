@@ -213,15 +213,3 @@ class Sms(models.Model):
     class Meta:
         managed = False
         db_table = 'SMS'
-
-
-
-
-
-
-
-
-
-
-
-
