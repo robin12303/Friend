@@ -21,8 +21,6 @@
             padding: 0;
         }
     </style>
-    {% block head %}
-    {% endblock head %}
 </head>
 
 <body>
@@ -46,11 +44,7 @@
                         <a class="nav-link dropdown-toggle" style="font-size: 32px;" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">주차장</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% if user.is_authenticated %}
-                                <li><a class="dropdown-item" href={% url 'parkinglot_input' %}>차량 등록 및 조회</a></li>
-                            {% else %}
-                                <li><a class="dropdown-item" href={% url 'login_index' %}>차량 등록 및 조회</a></li>
-                            {% endif %}
+                            <li><a class="dropdown-item" href={% url 'login_index' %}>차량 등록 및 조회</a></li>
                             <li><a class="dropdown-item" href={% url 'parkinglot_guest' %}>주차장 예약(방문자용)</a></li>
                         </ul>
                     </li>
@@ -58,42 +52,27 @@
                         <a class="nav-link dropdown-toggle" style="font-size: 32px;" id="navbarDropdown" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">관리비</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% if user.is_authenticated %}
-                                <li><a class="dropdown-item" href={% url 'billpayment_bill' %}>고지서 확인</a></li>
-                                <li><a class="dropdown-item" href={% url 'billpayment_detail' %}>관리비 영수증</a></li>
-                                <li><a class="dropdown-item" href={% url 'billpayment_pay' %}>결제</a></li>
-                            {% else %}
-                                <li><a class="dropdown-item" href={% url 'login_index' %}>고지서 확인</a></li>
-                                <li><a class="dropdown-item" href={% url 'login_index' %}>관리비 영수증</a></li>
-                                <li><a class="dropdown-item" href={% url 'login_index' %}>결제</a></li>
-                            {% endif %}
+                            <li><a class="dropdown-item" href={% url 'login_index' %}>고지서 확인</a></li>
+                            <li><a class="dropdown-item" href={% url 'login_index' %}>관리비 영수증</a></li>
+                            <li><a class="dropdown-item" href={% url 'login_index' %}>결제</a></li>
                         </ul>
                     </li>
                 </ul>
-                {% if user.is_authenticated %}
-                    <form class="d-flex" action={% url 'login_logout' %}>
-                        <a href="/mypage">{{user_name}}님</a>
-                        <button class="btn btn-outline-dark " type="submit">
-                            로그아웃
-                        </button>
-                    </form>
-                {% else %}
-                    <form class="d-flex" method="post" action="{% url 'login_index' %}">
-                        {% csrf_token %}
-                        {% include "form_errors.html" %}
-                        <div class="form-floating m-2">
-                            <input type="text" class="form-control" placeholder="name@example.com" name="username" id="username" value="{{ form.username.value|default_if_none:'' }}">
-                            <label for="floatingInput">아이디</label>
-                        </div>
-                        <div class="form-floating m-2">
-                            <input type="password" class="form-control" placeholder="Password" name="password" id="password" value="{{ form.password.value|default_if_none:'' }}">
-                            <label for="floatingPassword">비밀번호</label>
-                        </div>
-                        <button style = "height: 35px; width: 80px;" class="btn btn-outline-dark " type="submit">
-                            로그인
-                        </button>
-                    </form>
-                {% endif %}
+                <form class="d-flex" method="post" action="{% url 'login_index' %}">
+                    {% csrf_token %}
+                    {% include "form_errors.html" %}
+                    <div class="form-floating m-2">
+                        <label for="floatingInput">아이디</label>
+                        <input type="text" class="form-control" placeholder="name@example.com" name="username" id="username" value="{{ form.username.value|default_if_none:'' }}">
+                    </div>
+                    <div class="form-floating m-2">
+                        <label for="floatingPassword">비밀번호</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password" id="password" value="{{ form.password.value|default_if_none:'' }}">
+                    </div>
+                    <button style = "height: 35px; width: 85px;" class="btn btn-outline-dark" type="submit">
+                        로그인
+                    </button>
+                </form>
             </div>
         </div>
     </nav>
@@ -102,8 +81,23 @@
         <img src="https://wimg.mk.co.kr/meet/neds/2022/09/image_readtop_2022_841044_16638939305175624.png" width="1500" height = "300"class="img-responsive center-block"> 
     </header>
 
-    {% block content %}
-    {% endblock content %}
+    <div class="container my-3">
+        <form method="post" action="{% url 'login_index' %}">
+            {% csrf_token %}
+            {% include "form_errors.html" %}
+            <div class="mb-3">
+                <label for="username">사용자ID</label>
+                <input type="text" class="form-control" name="username" id="username"
+                    value="{{ form.username.value|default_if_none:'' }}">
+            </div>
+            <div class="mb-3">
+                <label for="password">비밀번호</label>
+                <input type="password" class="form-control" name="password" id="password"
+                    value="{{ form.password.value|default_if_none:'' }}">
+            </div>
+            <button type="submit" class="btn btn-primary">로그인</button>
+        </form>
+    </div>
 
     <!-- Footer-->
     <footer class=" bg-dark" style=" height: 20% ; bottom: 0; background-color: black;">
