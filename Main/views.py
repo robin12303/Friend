@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+
 template = 'Main/index.html'
 '''
 Variable "context" is data container for "Main/index.html" page.
@@ -11,21 +12,11 @@ It will be connectd to DB.
 현재 데이터는 테스트만을 위한 것이며, 추후 DB와 연결시킬 예정입니다.
 '''
 context = {
-    'islogin' : True,
+    'islogin' : False,
     'id' : "adsf",
     'pw' : "asdf",
     'user_name': "adsf",
 }
-
-'''
-This function do logout and refresh the page.
-이 함수는 로그아웃하고 페이지를 새로고침합니다.
-'''
-def logout(request):
-    context
-    context["islogin"] = False
-    return render(request, template, context)
-
 
 '''
 This function is default page loader.
@@ -33,4 +24,4 @@ This function is default page loader.
 '''
 def index(request):
     context
-    return render(request,template, context)
+    return render(request, template, context)

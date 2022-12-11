@@ -8,10 +8,6 @@ def bill(request):
     template = 'BillPayment/bill.html'
     return render(request, template, context)
 
-def receipt(request):
-    template = 'BillPayment/receipt.html'
-    return render(request, template, context)
-
 def detail(request):
     template = 'BillPayment/detail.html'
     '''추후 변경 예정, 임시값'''
