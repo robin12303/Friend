@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import *
 '''
 Variable "context" is data container for index page.
 That data is just for test.
@@ -7,14 +8,7 @@ It will be connectd to DB.
 이 변수 "context"는 "Main/index.html" 페이지를 위한 데이터 컨테이너입니다.
 현재 데이터는 테스트만을 위한 것이며, 추후 DB와 연결시킬 예정입니다.
 '''
-context = {
-    'islogin' : True,
-    'id' : "adsf",
-    'pw' : "asdf",
-    'user_name': "adsf",
-    'car_number' : ['1234', '4321'],
-    'empty' : ['A1','A23','B3','C5','C13','C14']
-}
+context = {}
 
 def guest(request):
     template = "ParkingLot/guest.html"
